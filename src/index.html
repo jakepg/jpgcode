@@ -14,13 +14,38 @@
 
 
 <script>
+
+var story = {
+        question: "Are you ready?",
+            yes:
+            {
+                question: "Execute the drug deal?",
+                    yes:
+                        {
+                            question: "You Die"
+                        },
+                    no:
+                        {
+                            question: "You still die"
+                        }
+            },
+            no :
+            {
+                question: "You Die"
+            }
+        };
+
+
+    var start = document.querySelector("#start")
+    var question = document.querySelector("#question")
+
     var aff = document.querySelector("#yes");
     aff.addEventListener("click",function(){
-        console.log(The streets is hot.);
+        start.innerHTML = "The streets is hot.";
     })
     var neg = document.querySelector("#no");
     neg.addEventListener("click",function(){
-        console.log(You are unexpectedly shot by a rival gang of thugs.  Your body is eaten by rats in a dumpster.);
+        start.innerHTML = "You are unexpectedly shot by a rival gang of thugs.  Your body is eaten by rats in a dumpster.";
     })
 
 </script>
