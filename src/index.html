@@ -13,13 +13,15 @@
 
 
 
-<!--The streets is hot.-->
-<!--You are unexpectedly shot by a rival gang of thugs.  Your body is eaten by rats in a dumpster.-->
-
 <script>
     var aff = document.querySelector("#yes");
-
+    aff.addEventListener("click",function(){
+        console.log(The streets is hot.);
+    })
     var neg = document.querySelector("#no");
+    neg.addEventListener("click",function(){
+        console.log(You are unexpectedly shot by a rival gang of thugs.  Your body is eaten by rats in a dumpster.);
+    })
 
 </script>
 
