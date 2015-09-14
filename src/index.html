@@ -8,12 +8,24 @@
 
 <h1 id="start">What is up G? You're not dead yet.</h1>
 <h2 id="question">Ready to hit the streets?</h2>
-<button id="yes">Let's roll, Kato.</button>
-<button id="no">Nah, I want to stay in these clouds</button>
+<button id="yes">Yes</button>
+<button id="no">No</button>
 
 
 
 <script>
+
+    var start = document.querySelector("#start");
+    var question = document.querySelector("#question");
+    var currentPage;
+
+function updatePage(page){
+    question.innerHTML = page.question
+    currentPage = page;
+
+
+}
+
 
 var story = {
         question: "Are you ready?",
@@ -36,17 +48,17 @@ var story = {
         };
 
 
-    var start = document.querySelector("#start")
-    var question = document.querySelector("#question")
 
     var aff = document.querySelector("#yes");
     aff.addEventListener("click",function(){
-        start.innerHTML = "The streets is hot.";
-    })
+        updatePage(currentPage.yes)
+    });
     var neg = document.querySelector("#no");
     neg.addEventListener("click",function(){
-        start.innerHTML = "You are unexpectedly shot by a rival gang of thugs.  Your body is eaten by rats in a dumpster.";
-    })
+        updatePage(currentPage.no)
+    });
+
+    updatePage(story);
 
 </script>
 
